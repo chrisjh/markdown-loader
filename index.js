@@ -1,12 +1,13 @@
 /*
  MIT License http://www.opensource.org/licenses/mit-license.php
- Author peerigon UG @peerigon
+ Author peerigon UG @peerigon 2014
+ Author Chris Hendel @chrisjh 2015
  */
 
-var marked = require("marked");
+var metaMarked = require("meta-marked");
 
-marked.setOptions({
-    renderer: new marked.Renderer(),
+metaMarked.setOptions({
+    renderer: new metaMarked.Renderer(),
     gfm: true,
     tables: true,
     breaks: false,
@@ -18,5 +19,5 @@ marked.setOptions({
 
 module.exports = function(markdown) {
     this.cacheable();
-    return marked(markdown);
+    return metaMarked(markdown);
 };
